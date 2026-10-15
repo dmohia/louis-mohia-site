@@ -1,0 +1,75 @@
+---
+import { getLangFromUrl, useTranslations, getRelativeLocaleUrl } from '../i18n';
+import ThemeToggle from './ThemeToggle.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const currentPath = Astro.url.pathname;
+
+interface NavItem {
+  href: string;
+  label: string;
+}
+
+const navItems: NavItem[] = [
+  { href: getRelativeLocaleUrl(lang, ''), label: t('nav.home') },
+  { href: getRelativeLocaleUrl(lang, 'services'), label: t('nav.services') },
+  { href: getRelativeLocaleUrl(lang, lang === 'fr' ? 'cas-clients' : 'case-studies'), label: t('nav.caseStudies') },
+  { href: getRelativeLocaleUrl(lang, 'blog'), label: t('nav.blog') },
+  { href: getRelativeLocaleUrl(lang, 'contact'), label: t('nav.contact') },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/' || href === '/en/') {
+    return currentPath === href;
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="header">
+  <div class="header-inner">
+    <a href={getRelativeLocaleUrl(lang, '')} class="logo">Louis Mohia</a>
+
+    <nav class="nav">
+      <ul class="nav-links" id="nav-links">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={['nav-link', { active: isActive(item.href) }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="nav-controls">
+        <LanguageSwitcher />
+        <ThemeToggle />
+        <button class="btn btn-icon mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function initMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn?.addEventListener('click', () => {
+      navLinks?.classList.toggle('open');
+    });
+  }
+
+  initMobileMenu();
+  document.addEventListener('astro:after-swap', initMobileMenu);
+</script>

@@ -1,0 +1,46 @@
+{
+  "site": {
+    "title": "Louis Mohia",
+    "description": "Consultant et développeur web"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Ce que je fais",
+    "caseStudies": "Cas clients",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Bonjour, je suis Louis Mohia",
+    "subtitle": "Consultant et développeur web, j'accompagne les entreprises dans leur transformation digitale.",
+    "cta": "Me contacter"
+  },
+  "services": {
+    "title": "Ce que je fais",
+    "subtitle": "Des solutions sur mesure pour vos projets digitaux"
+  },
+  "caseStudies": {
+    "title": "Cas clients",
+    "subtitle": "Découvrez quelques-uns de mes projets récents"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Réflexions et articles sur le web et la technologie",
+    "readMore": "Lire la suite"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Discutons de votre projet",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés"
+  },
+  "theme": {
+    "toggle": "Changer de thème"
+  },
+  "backToBlog": "Retour au blog"
+}

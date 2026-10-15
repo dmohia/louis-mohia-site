@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n';
+
+const t = useTranslations('fr');
+---
+
+<BaseLayout title={t('services.title')}>
+  <section class="hero">
+    <h1>{t('services.title')}</h1>
+    <p class="hero-subtitle">{t('services.subtitle')}</p>
+  </section>
+
+  <section class="section">
+    <div class="services-list">
+      <article class="service-item">
+        <h2>Conseil stratégique</h2>
+        <p>Je vous accompagne dans la définition de votre stratégie digitale. Ensemble, nous identifions les opportunités de croissance et les leviers d'amélioration pour votre activité.</p>
+        <ul>
+          <li>Audit de votre présence digitale</li>
+          <li>Analyse de la concurrence</li>
+          <li>Recommandations stratégiques</li>
+          <li>Feuille de route actionnable</li>
+        </ul>
+      </article>
+
+      <article class="service-item">
+        <h2>Développement web</h2>
+        <p>Je conçois et développe des sites web performants, accessibles et optimisés pour le référencement. Du site vitrine à l'application web, je m'adapte à vos besoins.</p>
+        <ul>
+          <li>Sites vitrines et landing pages</li>
+          <li>Applications web sur mesure</li>
+          <li>Sites e-commerce</li>
+          <li>Intégrations et APIs</li>
+        </ul>
+      </article>
+
+      <article class="service-item">
+        <h2>Automatisation</h2>
+        <p>Je vous aide à gagner du temps en automatisant vos tâches répétitives. Grâce aux outils no-code et low-code, nous optimisons vos processus métier.</p>
+        <ul>
+          <li>Automatisation des workflows</li>
+          <li>Intégrations entre outils</li>
+          <li>Tableaux de bord personnalisés</li>
+          <li>Formation aux outils</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-item ul {
+    margin-top: var(--space-md);
+    padding-left: var(--space-xl);
+  }
+
+  .service-item li {
+    margin-bottom: var(--space-sm);
+  }
+</style>

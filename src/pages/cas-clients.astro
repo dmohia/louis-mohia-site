@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n';
+
+const t = useTranslations('fr');
+---
+
+<BaseLayout title={t('caseStudies.title')}>
+  <section class="hero">
+    <h1>{t('caseStudies.title')}</h1>
+    <p class="hero-subtitle">{t('caseStudies.subtitle')}</p>
+  </section>
+
+  <section class="section">
+    <div class="card-grid">
+      <article class="card">
+        <h3 class="card-title">Refonte e-commerce</h3>
+        <p class="card-description">Migration d'une boutique en ligne vers une solution moderne, avec une augmentation de 40% du taux de conversion.</p>
+        <p class="card-meta">E-commerce • 2024</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Application interne</h3>
+        <p class="card-description">Développement d'un outil de gestion interne qui a permis de réduire le temps de traitement des commandes de 60%.</p>
+        <p class="card-meta">SaaS • 2024</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Automatisation marketing</h3>
+        <p class="card-description">Mise en place d'un système d'automatisation marketing générant 200 leads qualifiés par mois.</p>
+        <p class="card-meta">Automatisation • 2023</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .card-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-md);
+  }
+</style>

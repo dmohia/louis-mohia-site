@@ -1,0 +1,15 @@
+---
+import { getLangFromUrl, getAlternateLanguagePath } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+
+const frPath = getAlternateLanguagePath(currentPath, 'fr');
+const enPath = getAlternateLanguagePath(currentPath, 'en');
+---
+
+<div class="lang-switch">
+  <a href={frPath} class:list={[{ active: lang === 'fr' }]}>FR</a>
+  <span>|</span>
+  <a href={enPath} class:list={[{ active: lang === 'en' }]}>EN</a>
+</div>

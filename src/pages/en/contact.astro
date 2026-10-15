@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout title={t('contact.title')}>
+  <section class="hero">
+    <h1>{t('contact.title')}</h1>
+    <p class="hero-subtitle">{t('contact.subtitle')}</p>
+  </section>
+
+  <section class="section">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+
+      <div class="form-group">
+        <label class="form-label" for="name">{t('contact.name')}</label>
+        <input class="form-input" type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">{t('contact.email')}</label>
+        <input class="form-input" type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">{t('contact.message')}</label>
+        <textarea class="form-textarea" id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">{t('contact.send')}</button>
+    </form>
+  </section>
+</BaseLayout>

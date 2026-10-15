@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout title={t('caseStudies.title')}>
+  <section class="hero">
+    <h1>{t('caseStudies.title')}</h1>
+    <p class="hero-subtitle">{t('caseStudies.subtitle')}</p>
+  </section>
+
+  <section class="section">
+    <div class="card-grid">
+      <article class="card">
+        <h3 class="card-title">E-commerce redesign</h3>
+        <p class="card-description">Migration of an online store to a modern solution, with a 40% increase in conversion rate.</p>
+        <p class="card-meta">E-commerce • 2024</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Internal application</h3>
+        <p class="card-description">Development of an internal management tool that reduced order processing time by 60%.</p>
+        <p class="card-meta">SaaS • 2024</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Marketing automation</h3>
+        <p class="card-description">Implementation of a marketing automation system generating 200 qualified leads per month.</p>
+        <p class="card-meta">Automation • 2023</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .card-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-md);
+  }
+</style>

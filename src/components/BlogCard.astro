@@ -1,0 +1,28 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  slug: string;
+}
+
+const { title, description, date, slug } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const formattedDate = date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const blogPath = lang === 'fr' ? `/blog/${slug}` : `/en/blog/${slug}`;
+---
+
+<a href={blogPath} class="card blog-card">
+  <p class="blog-card-date">{formattedDate}</p>
+  <h3 class="card-title">{title}</h3>
+  <p class="card-description">{description}</p>
+</a>

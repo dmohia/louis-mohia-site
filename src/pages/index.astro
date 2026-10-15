@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, getRelativeLocaleUrl } from '../i18n';
+
+const t = useTranslations('fr');
+---
+
+<BaseLayout>
+  <section class="hero">
+    <h1>{t('home.title')}</h1>
+    <p class="hero-subtitle">{t('home.subtitle')}</p>
+    <a href={getRelativeLocaleUrl('fr', 'contact')} class="btn btn-primary">{t('home.cta')}</a>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">{t('nav.services')}</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3 class="card-title">Conseil stratégique</h3>
+        <p class="card-description">Accompagnement dans la définition de votre stratégie digitale et l'identification des opportunités de croissance.</p>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Développement web</h3>
+        <p class="card-description">Création de sites web performants et sur mesure, du site vitrine à l'application web complexe.</p>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Automatisation</h3>
+        <p class="card-description">Optimisation de vos processus métier grâce à l'automatisation et aux outils no-code/low-code.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

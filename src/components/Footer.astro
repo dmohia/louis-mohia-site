@@ -1,0 +1,11 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <p>&copy; {currentYear} Louis Mohia. {t('footer.copyright')}.</p>
+</footer>

@@ -1,0 +1,46 @@
+{
+  "site": {
+    "title": "Louis Mohia",
+    "description": "Web consultant and developer"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "What I do",
+    "caseStudies": "Case studies",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hi, I'm Louis Mohia",
+    "subtitle": "Web consultant and developer, I help businesses with their digital transformation.",
+    "cta": "Get in touch"
+  },
+  "services": {
+    "title": "What I do",
+    "subtitle": "Tailored solutions for your digital projects"
+  },
+  "caseStudies": {
+    "title": "Case studies",
+    "subtitle": "Discover some of my recent projects"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts and articles about the web and technology",
+    "readMore": "Read more"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's discuss your project",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "backToBlog": "Back to blog"
+}

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout title={t('services.title')}>
+  <section class="hero">
+    <h1>{t('services.title')}</h1>
+    <p class="hero-subtitle">{t('services.subtitle')}</p>
+  </section>
+
+  <section class="section">
+    <div class="services-list">
+      <article class="service-item">
+        <h2>Strategic consulting</h2>
+        <p>I help you define your digital strategy. Together, we identify growth opportunities and improvement levers for your business.</p>
+        <ul>
+          <li>Digital presence audit</li>
+          <li>Competitive analysis</li>
+          <li>Strategic recommendations</li>
+          <li>Actionable roadmap</li>
+        </ul>
+      </article>
+
+      <article class="service-item">
+        <h2>Web development</h2>
+        <p>I design and develop high-performance, accessible, and SEO-optimized websites. From landing pages to web applications, I adapt to your needs.</p>
+        <ul>
+          <li>Corporate websites and landing pages</li>
+          <li>Custom web applications</li>
+          <li>E-commerce websites</li>
+          <li>Integrations and APIs</li>
+        </ul>
+      </article>
+
+      <article class="service-item">
+        <h2>Automation</h2>
+        <p>I help you save time by automating repetitive tasks. Using no-code and low-code tools, we optimize your business processes.</p>
+        <ul>
+          <li>Workflow automation</li>
+          <li>Tool integrations</li>
+          <li>Custom dashboards</li>
+          <li>Tool training</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-item ul {
+    margin-top: var(--space-md);
+    padding-left: var(--space-xl);
+  }
+
+  .service-item li {
+    margin-bottom: var(--space-sm);
+  }
+</style>
